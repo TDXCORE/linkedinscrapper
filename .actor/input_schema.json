@@ -1,71 +1,65 @@
 {
   "title": "LinkedIn Profile Scraper Input",
+  "description": "Lista de perfiles y opciones básicas",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
     "profileUrls": {
       "title": "LinkedIn Profile URLs",
       "type": "array",
-      "description": "List of LinkedIn profile URLs to scrape",
+      "description": "Una o más URLs de perfiles de LinkedIn",
       "editor": "stringList",
-      "patternValue": "^https:\\/\\/(www\\.)?linkedin\\.com\\/in\\/[a-zA-Z0-9-]+\\/?$",
+      "patternValue": "^https:\\/\\/(www\\.)?linkedin\\.com\\/in\\/[a-zA-Z0-9-_%]+\\/?$",
       "minItems": 1,
       "maxItems": 100
     },
-
     "email": {
-      "title": "LinkedIn Email (optional)",
+      "title": "LinkedIn Email (opcional)",
       "type": "string",
-      "description": "Login email",
       "editor": "textfield",
       "isSecret": true
     },
     "password": {
-      "title": "LinkedIn Password (optional)",
+      "title": "LinkedIn Password (opcional)",
       "type": "string",
-      "description": "Login password",
       "editor": "textfield",
       "isSecret": true
     },
-
     "geminiApiKey": {
-      "title": "Google Gemini Pro 2.5 API Key",
+      "title": "Gemini API Key (opcional)",
       "type": "string",
-      "description": "API key for Gemini analysis",
       "editor": "textfield",
       "isSecret": true
     },
     "jigsawstackApiKey": {
-      "title": "JigsawStack API Key",
+      "title": "JigsawStack API Key (opcional)",
       "type": "string",
-      "description": "API key for JigsawStack proxy service",
       "editor": "textfield",
       "isSecret": true
     },
-
     "scrapingOptions": {
       "title": "Scraping Configuration",
       "type": "object",
-      "description": "Advanced scraping options (JSON)",
+      "description": "Opciones avanzadas (JSON)",
       "editor": "json",
       "default": {
-        "maxPostsPerProfile": 100,
+        "maxPostsPerProfile": 50,
         "includeMediaUrls": true,
-        "useAiAnalysis": true,
-        "delayBetweenRequests": 3000
+        "useAiAnalysis": false,
+        "delayBetweenRequestsMs": 2000
       }
     },
     "outputOptions": {
       "title": "Output Configuration",
       "type": "object",
-      "description": "Output format and storage (JSON)",
+      "description": "Formato/almacenamiento (JSON)",
       "editor": "json",
       "default": {
-        "generateExcel": true,
         "saveToDataset": true,
+        "generateExcel": false,
         "excelFileName": "linkedin_profile_analysis.xlsx"
       }
     }
   },
-  "required": ["profileUrls", "geminiApiKey", "jigsawstackApiKey"]
+  "required": ["profileUrls"]
 }

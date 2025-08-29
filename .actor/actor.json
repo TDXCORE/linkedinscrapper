@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "linkedinscrapper",
-  "title": "LinkedIn Scraper",
-  "version": "0.1",
-  "dockerfile": "./Dockerfile",
+  "title": "LinkedIn Profile Scraper Pro",
+  "version": "0.1.0",
+  "dockerfile": "../Dockerfile",
   "input": "./input_schema.json"
 }

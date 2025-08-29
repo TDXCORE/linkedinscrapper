@@ -1,7 +1,8 @@
 {
   "name": "linkedin-profile-scraper-pro",
   "version": "1.0.0",
-  "description": "Advanced LinkedIn profile scraper with AI analysis using Gemini Pro 2.5 and JigsawStack proxy rotation",
+  "description": "LinkedIn profile scraper (mock-ready) sobre Apify SDK v3",
+  "type": "module",
   "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js"
@@ -10,26 +11,14 @@
     "linkedin",
     "scraper",
     "apify",
-    "social-media",
-    "ai-analysis",
-    "gemini",
-    "proxy",
-    "data-extraction"
+    "dataset",
+    "sdk-v3"
   ],
-  "author": "LinkedIn Scraper Pro",
   "license": "MIT",
   "dependencies": {
-    "apify": "^3.1.0"
+    "apify": "^3.4.0"
   },
   "engines": {
     "node": ">=20.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TDXCORE/linkedinscrapper.git"
-  },
-  "bugs": {
-    "url": "https://github.com/TDXCORE/linkedinscrapper/issues"
-  },
-  "homepage": "https://github.com/TDXCORE/linkedinscrapper#readme"
+  }
 }
