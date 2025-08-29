@@ -48,9 +48,4 @@
     "url": "https://github.com/TDXCORE/linkedinscrapper/issues"
   },
   "homepage": "https://github.com/TDXCORE/linkedinscrapper#readme",
-  "apify": {
-    "actorSpecification": 1,
-    "categories": ["SOCIAL_MEDIA"],
-    "isPublic": true
-  }
 }
