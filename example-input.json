@@ -1,0 +1,23 @@
+{
+  "profileUrls": [
+    "https://www.linkedin.com/in/example-profile-1",
+    "https://www.linkedin.com/in/example-profile-2"
+  ],
+  "credentials": {
+    "email": "your-linkedin-email@example.com",
+    "password": "your-linkedin-password"
+  },
+  "geminiApiKey": "your-gemini-pro-25-api-key-here",
+  "jigsawstackApiKey": "your-jigsawstack-api-key-here",
+  "scrapingOptions": {
+    "maxPostsPerProfile": 100,
+    "includeMediaUrls": true,
+    "useAiAnalysis": true,
+    "delayBetweenRequests": 3000
+  },
+  "outputOptions": {
+    "generateExcel": true,
+    "saveToDataset": true,
+    "excelFileName": "linkedin_profile_analysis.xlsx"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "linkedin-profile-scraper-pro",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "env": {},
+  "defaultRunOptions": {
+    "build": "latest",
+    "timeoutSecs": 3600,
+    "memoryMbytes": 4096
+  }
+}
