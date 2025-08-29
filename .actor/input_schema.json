@@ -8,109 +8,62 @@
       "type": "array",
       "description": "List of LinkedIn profile URLs to scrape",
       "editor": "stringList",
-      "items": {
-        "type": "string",
-        "pattern": "^https:\\/\\/(www\\.)?linkedin\\.com\\/in\\/[a-zA-Z0-9-]+\\/?$"
-      },
+      "patternValue": "^https:\\/\\/(www\\.)?linkedin\\.com\\/in\\/[a-zA-Z0-9-]+\\/?$",
       "minItems": 1,
       "maxItems": 100
     },
-    "credentials": {
-      "title": "LinkedIn Credentials (Optional)",
-      "type": "object",
-      "description": "LinkedIn login credentials for accessing private content",
-      "editor": "object",
-      "properties": {
-        "email": {
-          "title": "Email",
-          "type": "string",
-          "description": "LinkedIn login email",
-          "editor": "textfield",
-          "isSecret": true
-        },
-        "password": {
-          "title": "Password", 
-          "type": "string",
-          "description": "LinkedIn login password",
-          "editor": "textfield",
-          "isSecret": true
-        }
-      }
+
+    "email": {
+      "title": "LinkedIn Email (optional)",
+      "type": "string",
+      "description": "Login email",
+      "editor": "textfield",
+      "isSecret": true
     },
+    "password": {
+      "title": "LinkedIn Password (optional)",
+      "type": "string",
+      "description": "Login password",
+      "editor": "textfield",
+      "isSecret": true
+    },
+
     "geminiApiKey": {
       "title": "Google Gemini Pro 2.5 API Key",
       "type": "string",
-      "description": "API key for Gemini Pro 2.5 content analysis",
+      "description": "API key for Gemini analysis",
       "editor": "textfield",
       "isSecret": true
     },
     "jigsawstackApiKey": {
       "title": "JigsawStack API Key",
-      "type": "string", 
+      "type": "string",
       "description": "API key for JigsawStack proxy service",
       "editor": "textfield",
       "isSecret": true
     },
+
     "scrapingOptions": {
       "title": "Scraping Configuration",
       "type": "object",
-      "description": "Advanced scraping options",
-      "editor": "object",
-      "properties": {
-        "maxPostsPerProfile": {
-          "title": "Max Posts Per Profile",
-          "type": "integer",
-          "description": "Maximum number of posts to scrape per profile",
-          "minimum": 10,
-          "maximum": 1000,
-          "default": 100
-        },
-        "includeMediaUrls": {
-          "title": "Extract Media URLs",
-          "type": "boolean",
-          "description": "Extract URLs for images, videos, and documents",
-          "default": true
-        },
-        "useAiAnalysis": {
-          "title": "Use AI Content Analysis",
-          "type": "boolean",
-          "description": "Enable Gemini Pro 2.5 content analysis",
-          "default": true
-        },
-        "delayBetweenRequests": {
-          "title": "Delay Between Requests (ms)",
-          "type": "integer",
-          "description": "Delay between requests in milliseconds",
-          "minimum": 1000,
-          "maximum": 10000,
-          "default": 3000
-        }
+      "description": "Advanced scraping options (JSON)",
+      "editor": "json",
+      "default": {
+        "maxPostsPerProfile": 100,
+        "includeMediaUrls": true,
+        "useAiAnalysis": true,
+        "delayBetweenRequests": 3000
       }
     },
     "outputOptions": {
       "title": "Output Configuration",
-      "type": "object", 
-      "description": "Output format and storage options",
-      "editor": "object",
-      "properties": {
-        "generateExcel": {
-          "title": "Generate Excel Report",
-          "type": "boolean",
-          "description": "Generate Excel report in Key-Value Store",
-          "default": true
-        },
-        "saveToDataset": {
-          "title": "Save to Dataset",
-          "type": "boolean",
-          "description": "Save structured data to Apify Dataset",
-          "default": true
-        },
-        "excelFileName": {
-          "title": "Excel File Name",
-          "type": "string",
-          "description": "Custom name for Excel report file",
-          "default": "linkedin_profile_analysis.xlsx"
-        }
+      "type": "object",
+      "description": "Output format and storage (JSON)",
+      "editor": "json",
+      "default": {
+        "generateExcel": true,
+        "saveToDataset": true,
+        "excelFileName": "linkedin_profile_analysis.xlsx"
       }
     }
   },
