@@ -4,11 +4,7 @@
   "description": "Advanced LinkedIn profile scraper with AI analysis using Gemini Pro 2.5 and JigsawStack proxy rotation",
   "main": "src/main.js",
   "scripts": {
-    "start": "node src/main.js",
-    "test": "jest",
-    "lint": "eslint src/",
-    "build": "npm install",
-    "dev": "nodemon src/main.js"
+    "start": "node src/main.js"
   },
   "keywords": [
     "linkedin",
